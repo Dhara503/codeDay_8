@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's codding </title>
+</head>
+
+<body>
+    <script>
+        //Kids With the Greatest Number of Candies
+
+        var kidsWithCandies = function (candies, extraCandies) {
+            let highest = candies[0];
+            let array = [];
+            for (let i = 1; i < candies.length; i++) {
+                if (highest < candies[i]) {
+                    highest = candies[i]
+                }
+            }
+            for (let i = 0; i < candies.length; i++) {
+                if (candies[i] + extraCandies >= highest) {
+                    array.push(true);
+                } else {
+                    array.push(false);
+                }
+            }
+            return array
+        };
+
+        // How Many Numbers Are Smaller Than the Current Number
+        const checkCntToSmlr = (number) => {
+            let newArray = [];
+
+            for (let i = 0; i < number.length; i++) {
+                let count = 0;
+                for (let j = 0; j < number.length; j++) {
+                    if (number[i] > number[j]) {
+                        count++;
+                    }
+            
+                }
+                newArray.push(count);
+            }
+        return newArray;
+        }
+
+        let number =[12,10,9,23,1];
+        console.log(checkCntToSmlr(number));
+    // output : [3,2,1,4,0];
+    
+    </script>
+
+</body>
+
+</html>
